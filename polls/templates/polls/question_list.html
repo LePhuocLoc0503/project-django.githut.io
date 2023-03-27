@@ -1,0 +1,11 @@
+{% extends "polls/base.html" %}
+
+{% block content %}
+    {% if dsquest %}
+    {% for item in dsquest %}
+        {{ item.question_text}}
+    {%endfor%}
+    {% else%}
+        <h3>no content</h3>
+    {%endif%}
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'polls/base.html' %}
+{% block content %}
+  {% if a %}
+   {% for item in qss.choices_set.all %}
+       {{ item.choice_text}}
+   {%endfor%}
+    {% else%}
+        <h3>no content</h3>
+   {%endif%}
+{% endblock %}

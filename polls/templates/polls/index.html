@@ -1,0 +1,15 @@
+
+{% extends 'polls/base.html' %}
+
+{% block content %}
+<h1>abc</h1>
+<p>abcbcas</p>
+<p><b>{{name}}</b></p>
+<h2>
+    <ul>
+    {% for item in text %}
+        <li>{{item}}</li>
+        {% endfor %}
+</ul>
+</h2>
+{% endblock %}

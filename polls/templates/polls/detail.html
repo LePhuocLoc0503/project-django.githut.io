@@ -1,8 +1,16 @@
 {% extends "polls/base.html" %}
 {% block content %}
-    {% if ids %}
-        {% for ids in ids.choices_set.all %}
-            {{ ids.choice_text }}
-        {% endfor %}
-    {% endif %}
+{% if q %}
+    <form action="{% url 'vote' q.id%}" method="post">
+    {% csrf_token %}
+   <ul>
+    {% for item in q.choices_set.all %}
+       <li><input type="radio" value="{{ item.id}}" name="choice">{{ item.choice_text}}</li>
+    {%endfor%}
+
+   <p><input type="submit" value="send" ></p>
+</ul>
+</form>
+{%endif%}
+
 {% endblock %}
